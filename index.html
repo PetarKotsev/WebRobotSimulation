@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #main-view {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #compass-view {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 200px;
+        height: 200px;
+      }
+
+      .credits {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        color: #999999;
+        padding: 1em;
+        text-align: right;
+      }
+
+      canvas {
+        display: block;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="main-view"></div>
+    <div id="compass-view"></div>
+
+    <i class="credits">
+      Author: Petar Kotsev <br />
+      Credits for the model: https://sketchfab.com/tojek_vfx
+    </i>
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script type="module" src="js/index.js"></script>
+  </body>
+</html>
