@@ -9,12 +9,12 @@ renderer.antialias = true;
 document.getElementById("main-view").appendChild(renderer.domElement);
 
 // Making the scene
-var scene = new THREE.Scene();
-scene.background = new THREE.Color(0xe4e4e4);
-scene.fog = new THREE.Fog(0xa0a0a0, 3000, 8000);
+let scene = new THREE.Scene();
+scene.background = new THREE.Color(0xd0d0f4);
+scene.fog = new THREE.Fog(0xd0d0f4, 3000, 9000);
 
 // ground
-var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(20000, 20000), new THREE.MeshPhongMaterial({
+let mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(20000, 20000), new THREE.MeshPhongMaterial({
     color: 0x999999,
     depthWrite: false
 }));
@@ -23,11 +23,11 @@ mesh.receiveShadow = true;
 scene.add(mesh);
 
 // Setting up the a camera
-var camera = new THREE.PerspectiveCamera(
+let camera = new THREE.PerspectiveCamera(
     45,
     window.innerWidth / window.innerHeight,
     0.1,
-    8000
+    10000
 );
 camera.position.x = 1837.037015999162;
 camera.position.y = 2681.726911266994;
@@ -45,10 +45,7 @@ camera.up.y = 1;
 camera.zoom = 1;
 
 // Lights
-var pointLight = new THREE.PointLight(0x7789d6, 0.7);
-scene.add(pointLight);
-
-var dirLight = new THREE.DirectionalLight(0xffffff);
+let dirLight = new THREE.DirectionalLight(0xffffff);
 dirLight.position.set(-3, 10, -10);
 dirLight.castShadow = true;
 dirLight.shadow.camera.top = 2;
@@ -59,13 +56,13 @@ dirLight.shadow.camera.near = 0.1;
 dirLight.shadow.camera.far = 40;
 scene.add(dirLight);
 
-var ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+let ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
 let controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 // loading the model
-var loader = new THREE.GLTFLoader();
+let loader = new THREE.GLTFLoader();
 
 loader.load(
     "../models/irb120/scene.gltf",
@@ -80,7 +77,7 @@ loader.load(
 );
 
 // adding the grid plane
-var grid = new THREE.GridHelper(20000, 25, 0xff0000, 0xaaaaaa);
+let grid = new THREE.GridHelper(5000, 26, 0xff0000, 0x666666);
 scene.add(grid);
 
 // -----------------
